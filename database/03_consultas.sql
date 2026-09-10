@@ -1,9 +1,9 @@
 -- ADMINISTRACIÓN Y MANIPULACIÓN DE DATOS DE MI PROYECTO MÓVIL
 -- RESPONSABILIDAD: USUARIOS Y PARCELAS
 
--- =========================================
+-- __________________________________________
 -- 1. TRES CONSULTAS BÁSICAS UTILIZANDO "SELECT"
--- =========================================
+-- __________________________________________
 
 -- SELECT 1: Mostrar todas las parcelas
 SELECT *
@@ -22,9 +22,9 @@ FROM public."Parcelas"
 ORDER BY nombre ASC;
 
 
--- =========================================
+-- ________________________________________
 -- 2. DOS MODIFICACIONES UTILIZANDO (UPDATE)
--- =========================================
+-- ________________________________________
 
 -- UPDATE 1: Modificar el nombre de una parcela de prueba
 UPDATE public."Parcelas"
@@ -38,18 +38,18 @@ SET tipo_cultivo = 'Maiz Dulce'
 WHERE id_parcela = 5;
 
 
--- =========================================
+-- _______________________________________________________________
 -- 3. UNA ELIMINACIÓN DE UN REGISTRO DE PRUEBA UTILIZANDO (DELETE)
--- =========================================
+-- _______________________________________________________________
 
 -- DELETE: Eliminar una parcela de prueba
 DELETE FROM public."Parcelas"
 WHERE id_parcela = 8;
 
 
--- =========================================
+-- ______________________________________________________________________________________________________________________________
 -- 4. CINCO CONSULTAS RESPONDIENDO PREGUNTAS REALES QUE PODRÍA NECESITAR EL SISTEMA (ENFOCADO EN LAS TABLAS DE PARCELAS Y USUARIOS)
--- =========================================
+-- ______________________________________________________________________________________________________________________________
 
 -- Consulta 1: ¿Qué parcelas están registradas?
 SELECT id_parcela, id_usuario, nombre, tipo_cultivo
