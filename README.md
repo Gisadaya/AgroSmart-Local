@@ -1,4 +1,6 @@
-![AgroSmart Local](Banner_AgroSmart_Local.png)
+<p align="center">
+  <img src="Banner_AgroSmart_Local.png" width="100%">
+</p>
 <h1 align="center"> AgroSmart Local</h1>
 <p align="center">
   Base de datos del proyecto AgroSmart Local
