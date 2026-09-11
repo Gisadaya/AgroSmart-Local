@@ -11,7 +11,7 @@ AgroSmart Local es un sistema de monitoreo agrícola desarrollado para facilitar
 
 La base de datos de AgroSmart Local está diseñada para almacenar y administrar la información utilizada por la aplicación desarrollada en App Inventor.
 
-## 02 · Objetivo
+## Objetivo
 
 Diseñar y administrar una base de datos que permita organizar la información generada por el sistema AgroSmart, manteniendo relacionadas las diferentes entidades del proyecto.
 
@@ -56,30 +56,12 @@ sus campos, claves y relaciones entre las diferentes tablas.
 El proyecto se desarrolla mediante GitHub utilizando ramas
 independientes para distribuir las tareas entre los integrantes.
 
-| Integrante | Rama | Responsabilidad |
+| Integrante | Rama | Área asignada |
 |---|---|---|
-| Gissel Díaz | `usuarios-parcelas`| Usuarios y Parcelas  |
-| Leonardo Funes | `sensores-lecturas` | Sensores y Lecturas |
-| Valerio Arias | `riegos-alertas` | Riegos y alertas |
+| Gissel Díaz | `usuarios-parcelas`| Módulo de Usuarios y Parcelas  |
+| Leonardo Funes | `sensores-lecturas` | Módulo de Sensores y Lecturas |
+| Valerio Arias | `riegos-alertas` | Módulo de Riegos y Alertas |
 
 Los cambios desarrollados en las diferentes ramas serán
 integrados posteriormente en `main`.
 
-
-
-## Organización del repositorio
-
-```text
-AgroSmart-Local/
-│
-├── database/
-│   ├── 02_datos_prueba.sql
-│   ├── 03_consultas.sql
-│   └── 04_seguridad.sql
-│
-├── modelo/
-│   └── modelo_fisico.png
-│
-├── evidencias/
-│
-└── README.md
