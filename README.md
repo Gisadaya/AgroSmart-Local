@@ -58,11 +58,11 @@ sus campos, claves y relaciones entre las diferentes tablas.
 El proyecto se desarrolla mediante GitHub utilizando ramas
 independientes para distribuir las tareas entre los integrantes.
 
-| Integrante | Rama | Área asignada |
+| Integrante | Rama | Entregables principales |
 |---|---|---|
-| Gissel Díaz | `usuarios-parcelas`| Módulo de Usuarios y Parcelas  |
-| Leonardo Funes | `sensores-lecturas` | Módulo de Sensores y Lecturas |
-| Valerio Arias | `riegos-alertas` | Módulo de Riegos y Alertas |
+| Gissel Díaz | `usuarios-parcelas`| Datos de prueba, consultas y documentación correspondiente a Usuarios y Parcelas  |
+| Leonardo Funes | `sensores-lecturas` | Datos de prueba, consultas y documentación correspondiente a Sensores y Lecturas |
+| Valeria Arias | `riegos-alertas` | Datos de prueba, consultas y documentación correspondiente a Riegos y Alertas |
 
 Los cambios desarrollados en las diferentes ramas serán
 integrados posteriormente en `main`.
