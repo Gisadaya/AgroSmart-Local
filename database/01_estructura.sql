@@ -130,7 +130,7 @@ INSERT INTO public."Parcelas"
 VALUES
 (1, 1, 'Huerto Principal', 'Chile');
 (2, 2, 'Huerto Secundario', 'Tomate');
-(2, 2, 'Huerto Terceario', 'Pepino');
+(3, 2, 'Huerto Terceario', 'Pepino');
 
 
 INSERT INTO public."Sensores"
