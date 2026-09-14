@@ -13,7 +13,7 @@ FROM public."Parcelas";
 -- SELECT 2: Buscar parcelas de un cultivo específico
 SELECT *
 FROM public."Parcelas"
-WHERE tipo_cultivo = 'Tomate';
+WHERE tipo_cultivo = 'Maiz';
 
 
 -- SELECT 3: Ordenar las parcelas por nombre
@@ -28,13 +28,13 @@ ORDER BY nombre ASC;
 
 -- UPDATE 1: Modificar el nombre de una parcela de prueba
 UPDATE public."Parcelas"
-SET nombre = 'Huerto de Lechuga Grande'
+SET nombre = 'Huerto Secundario'
 WHERE id_parcela = 4;
 
 
 -- UPDATE 2: Modificar el tipo de cultivo de una parcela de prueba
 UPDATE public."Parcelas"
-SET tipo_cultivo = 'Maiz Dulce'
+SET tipo_cultivo = 'Chile'
 WHERE id_parcela = 5;
 
 
