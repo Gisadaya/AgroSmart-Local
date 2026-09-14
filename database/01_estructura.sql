@@ -119,8 +119,8 @@ ________________________________________
 INSERT INTO public."Usuarios"
 (id_usuario, nombre, correo, contraseña)
 VALUES
-(1, 'Gissel Diaz', 'Giss@gmail.com', '1234');
-(2, 'Leonardo Funez', 'Leo@gmail.com', '2345');
+(1, 'Gissel Diaz', 'Giss@gmail.com', '1234'),
+(2, 'Leonardo Funez', 'Leo@gmail.com', '2345'),
 (3, 'Valeria Arias', 'Valeria@gmail.com', '3456');
 
 
@@ -128,37 +128,37 @@ VALUES
 INSERT INTO public."Parcelas"
 (id_parcela, id_usuario, nombre, tipo_cultivo)
 VALUES
-(1, 1, 'Huerto Principal', 'Chile');
-(2, 2, 'Huerto Secundario', 'Tomate');
+(1, 1, 'Huerto Principal', 'Chile'),
+(2, 2, 'Huerto Secundario', 'Tomate'),
 (3, 2, 'Huerto Terceario', 'Pepino');
 
 
 INSERT INTO public."Sensores"
 (id_sensor, id_parcela, tipo_sensor, estado)
 VALUES
-(1, 1, 'DHT11', 'Activo');
+(1, 1, 'DHT11', 'Activo'),
 (2, 1, 'YL-69', 'Activo');
 
 
 INSERT INTO public."Lecturas"
 (id_lectura, id_sensor, temperatura, humedad_ambiente, humedad_suelo)
 VALUES
-(1, 1, 28, 65, 70);
-(2, 1, 30, 60, 55);
-(3, 2, 27, 62, 40);
+(1, 1, 28, 65, 70),
+(2, 1, 30, 60, 55),
+(3, 2, 27, 62, 40),
 (4, 2, 29, 68, 75);
 
 
 INSERT INTO public."Riegos"
 (id_riego, id_parcela, duracion, fecha_hora)
 VALUES
-(1, 1, 15, '2026-09-03 10:00:00');
-(2, 1, 30, '2026-09-03 11:00:00');
+(1, 1, 15, '2026-09-03 10:00:00'),
+(2, 1, 30, '2026-09-03 11:00:00'),
 (3, 2, 15, '2026-09-03 12:00:00');
 
 
 INSERT INTO public."Alertas"
 (id_alerta, id_sensor, tipo_alerta, mensaje, fecha_hora)
 VALUES
-(1, 1, 'Humedad baja', 'La humedad del suelo es baja', '2026-09-03 10:05:00');
+(1, 1, 'Humedad baja', 'La humedad del suelo es baja', '2026-09-03 10:05:00'),
 (2, 2, 'Humedad normal', 'Los niveles de humedad son normales', '2026-09-03 10:05:00');
