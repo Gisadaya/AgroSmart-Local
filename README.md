@@ -1,69 +1,32 @@
-<p align="center">
-  <img src="Banner_AgroSmart_Local.png" width="100%">
-</p>
-<h1 align="center"> AgroSmart Local</h1>
-<p align="center">
-  Base de datos del proyecto AgroSmart Local
-</p>
+# AgroSmart Local — Usuarios y Parcelas
 
+## Sobre esta rama
 
-## Descripción
+Esta rama, **`usuarios-parcelas`**, fue creada y desarrollada por **Gissel Díaz** como parte del trabajo colaborativo del proyecto AgroSmart Local.
 
-AgroSmart Local es un sistema de monitoreo agrícola desarrollado para facilitar el seguimiento de las condiciones de un cultivo. El proyecto permite registrar información relacionada con usuarios, parcelas, sensores, lecturas, riegos y alertas.
+En ella se realizó el trabajo correspondiente a la gestión de **Usuarios y Parcelas** de la base de datos.
 
-La base de datos de AgroSmart Local está diseñada para almacenar y administrar la información utilizada por la aplicación desarrollada en App Inventor.
+## Trabajo realizado
 
-## Objetivo
+- Creación y organización de las tablas `Usuarios` y `Parcelas`.
+- Implementación de la relación entre usuarios y parcelas mediante claves foráneas.
+- Registro de datos de prueba para las parcelas.
+- Elaboración de consultas SQL utilizando `SELECT`, `WHERE` y `ORDER BY`.
+- Modificación y eliminación de registros mediante `UPDATE` y `DELETE`.
+- Organización de los archivos correspondientes a esta parte del proyecto.
 
-Diseñar y administrar una base de datos que permita organizar la información generada por el sistema AgroSmart, manteniendo relacionadas las diferentes entidades del proyecto.
+## Archivos de esta rama
 
-## Tecnologías utilizadas
-
-| Tecnología | Uso dentro del proyecto |
+| Archivo | Contenido |
 |---|---|
-| PostgreSQL | Gestión y almacenamiento de la base de datos |
-| pgAdmin | Administración y consultas de la base de datos |
-| GitHub | Control de versiones y trabajo colaborativo |
-| MIT App Inventor | Desarrollo de la aplicación |
+| `01_estructura.sql` | Estructura de la base de datos y relaciones. |
+| `02_datos_prueba.sql` | Datos de prueba de las parcelas. |
+| `03_consultas.sql` | Consultas y manipulación de datos. |
+| `04_seguridad.sql` | Configuración de usuarios y permisos. |
+| `modelo_fisico.png` | Modelo físico de la base de datos AgroSmart Local. |
+| `evidencias_semana2.pdf` | Evidencias del trabajo realizado en PostgreSQL y GitHub. |
 
-## Estructura de la base de datos
+### Responsable:
 
-La base de datos está compuesta por seis tablas principales:
-
-| Tabla | Función |
-|---|---|
-| `Usuarios` | Información de los usuarios registrados |
-| `Parcelas` | Información de las parcelas y cultivos |
-| `Sensores` | Sensores asociados a las parcelas |
-| `Lecturas` | Datos obtenidos de los sensores |
-| `Riegos` | Registro de los riegos realizados |
-| `Alertas` | Registro de alertas generadas |
-
-## Modelo físico
-
-El modelo físico representa la estructura de la base de datos,
-sus campos, claves y relaciones entre las diferentes tablas.
-
-![Modelo físico](modelo/modelo_fisico.png)
-
----
-## Integrantes
-
-- Gissel Adayari Díaz López
-- Leonardo Abisaí Funez Zetino
-- Ariana Valeria Arias Henriquez
-  
-## Trabajo colaborativo
-
-El proyecto se desarrolla mediante GitHub utilizando ramas
-independientes para distribuir las tareas entre los integrantes.
-
-| Integrante | Rama | Entregables principales |
-|---|---|---|
-| Gissel Díaz | `usuarios-parcelas`| Datos de prueba, consultas y documentación correspondiente a Usuarios y Parcelas  |
-| Leonardo Funes | `sensores-lecturas` | Datos de prueba, consultas y documentación correspondiente a Sensores y Lecturas |
-| Valeria Arias | `riegos-alertas` | Datos de prueba, consultas y documentación correspondiente a Riegos y Alertas |
-
-Los cambios desarrollados en las diferentes ramas serán
-integrados posteriormente en `main`.
-
+**Gissel Díaz**  
+Creadora y responsable de la rama `usuarios-parcelas`.
