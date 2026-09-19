@@ -15,6 +15,7 @@
 AgroSmart Local es un sistema de monitoreo agrícola desarrollado para facilitar el seguimiento de las condiciones de un cultivo. El proyecto permite registrar información relacionada con usuarios, parcelas, sensores, lecturas, riegos y alertas.
 
 La base de datos de AgroSmart Local está diseñada para almacenar y administrar la información utilizada por la aplicación AgroSmart.
+
 ---
 
 ## Objetivo
