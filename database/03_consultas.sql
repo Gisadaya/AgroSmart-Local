@@ -116,16 +116,12 @@ ORDER BY cantidad_parcelas DESC;
 
 
 -- ============================================================
--- 5. CONSULTAS RELACIONADAS ENTRE TABLAS
---    UTILIZANDO INNER JOIN
+-- 1. CONSULTAS RELACIONADAS ENTRE TABLAS
+-- UTILIZANDO INNER JOIN
 -- ============================================================
 
--- ============================================================
--- 5.1 Consulta 1: Parcelas y sensores asociados
--- ============================================================
-
--- ¿Qué sensores están asociados a cada parcela?
-SELECT 
+-- 1.1 Consulta 1 con INNER JOIN
+SELECT
     p.id_parcela,
     p.nombre AS parcela,
     p.tipo_cultivo,
@@ -138,12 +134,8 @@ INNER JOIN public."Sensores" s
 ORDER BY p.id_parcela ASC;
 
 
--- ============================================================
--- 5.2 Consulta 2: Usuarios y parcelas registradas
--- ============================================================
-
--- ¿Qué parcelas pertenecen a cada usuario?
-SELECT 
+-- 1.2 Consulta 2 con INNER JOIN
+SELECT
     u.nombre AS usuario,
     u.correo,
     p.id_parcela,
@@ -155,35 +147,20 @@ INNER JOIN public."Parcelas" p
 ORDER BY u.nombre ASC;
 
 
-
 -- ============================================================
--- 6. CONSULTAS DE RESUMEN Y AGREGACIÓN
--- ============================================================
-
--- Las siguientes consultas utilizan funciones de agregación
--- para resumir y analizar la información registrada en la
--- base de datos de AgroSmart Local.
-
-
--- ============================================================
--- 6.1 COUNT: Total de parcelas registradas
+-- 2. CONSULTAS DE RESUMEN
 -- ============================================================
 
--- ¿Cuántas parcelas están registradas actualmente?
-SELECT 
-    COUNT(*) AS total_parcelas
+-- 2.1 Uso de COUNT
+SELECT COUNT(*) AS total_parcelas
 FROM public."Parcelas";
 
 
--- ============================================================
--- 6.2 SUM: Total de sensores asociados por usuario
--- ============================================================
-
--- ¿Cuántos sensores están asociados a las parcelas de cada usuario?
-SELECT 
+-- 2.2 Uso de SUM
+SELECT
     u.nombre AS usuario,
     SUM(
-        CASE 
+        CASE
             WHEN s.id_sensor IS NOT NULL THEN 1
             ELSE 0
         END
@@ -197,32 +174,20 @@ GROUP BY u.id_usuario, u.nombre
 ORDER BY total_sensores DESC;
 
 
--- ============================================================
--- 6.3 MAX: Mayor identificador de parcela
--- ============================================================
-
--- ¿Cuál es el mayor ID de parcela registrado?
-SELECT 
+-- 2.3 Uso de MAX
+SELECT
     MAX(id_parcela) AS id_parcela_mayor
 FROM public."Parcelas";
 
 
--- ============================================================
--- 6.4 MIN: Menor identificador de parcela
--- ============================================================
-
--- ¿Cuál es el menor ID de parcela registrado?
-SELECT 
+-- 2.4 Uso de MIN
+SELECT
     MIN(id_parcela) AS id_parcela_menor
 FROM public."Parcelas";
 
 
--- ============================================================
--- 6.5 GROUP BY: Cantidad de parcelas por tipo de cultivo
--- ============================================================
-
--- ¿Cuántas parcelas existen para cada tipo de cultivo?
-SELECT 
+-- 2.5 Uso de GROUP BY
+SELECT
     tipo_cultivo,
     COUNT(*) AS cantidad_parcelas
 FROM public."Parcelas"
@@ -230,20 +195,13 @@ GROUP BY tipo_cultivo
 ORDER BY cantidad_parcelas DESC;
 
 
-
 -- ============================================================
--- 7. VALIDACIÓN DE LOS DATOS
--- ============================================================
-
-
--- ============================================================
--- 7.1 INCONSISTENCIA 1: NOMBRES DE PARCELAS REPETIDOS
+-- 3. VALIDACIÓN DE LOS DATOS
 -- ============================================================
 
--- Consulta utilizada para detectar nombres de parcelas
--- repetidos dentro de un mismo usuario.
+-- 3.1 Inconsistencia 1: nombres de parcelas repetidos
 
-SELECT 
+SELECT
     id_usuario,
     nombre,
     COUNT(*) AS cantidad
@@ -253,16 +211,27 @@ HAVING COUNT(*) > 1
 ORDER BY id_usuario ASC, nombre ASC;
 
 
--- ============================================================
--- 7.1.1 COMPROBACIÓN DESPUÉS DE LAS CORRECCIONES
--- ============================================================
+-- 3.1.2 Corrección realizada
 
--- Después de realizar las correcciones mediante UPDATE,
--- se vuelve a ejecutar la consulta para comprobar que
--- ya no existan nombres de parcelas repetidos dentro
--- del mismo usuario.
+UPDATE public."Parcelas"
+SET nombre = 'Huerto Terceario'
+WHERE id_parcela = 7
+    AND id_usuario = 1;
 
-SELECT 
+UPDATE public."Parcelas"
+SET nombre = 'Huerto Principal'
+WHERE id_parcela = 5
+    AND id_usuario = 2;
+
+UPDATE public."Parcelas"
+SET nombre = 'Huerto Principal'
+WHERE id_parcela = 6
+    AND id_usuario = 3;
+
+
+-- 3.1.3 Comprobación de la corrección
+
+SELECT
     id_usuario,
     nombre,
     COUNT(*) AS cantidad
@@ -272,68 +241,28 @@ HAVING COUNT(*) > 1
 ORDER BY id_usuario ASC, nombre ASC;
 
 
--- ============================================================
--- 7.2 INCONSISTENCIA 2: ERROR DE ESCRITURA
--- ============================================================
+-- 3.2 Inconsistencia 2: error de escritura en el nombre de una parcela
 
--- Comprobación de los registros afectados por el error
--- de escritura "Huerto Terceario".
+UPDATE public."Parcelas"
+SET nombre = 'Huerto Terciario'
+WHERE id_parcela IN (3, 7);
 
-SELECT 
-    id_parcela,
-    id_usuario,
-    nombre,
-    tipo_cultivo
+
+-- 3.2.3 Comprobación de la corrección
+
+SELECT *
 FROM public."Parcelas"
-WHERE id_parcela IN (3, 7)
 ORDER BY id_parcela ASC;
 
 
--- ============================================================
--- 7.2.1 COMPROBACIÓN DEL NOMBRE CORREGIDO
--- ============================================================
+-- 3.3 Inconsistencia 3: formato no uniforme de los correos electrónicos
 
--- Verificación de que los registros afectados muestran
--- correctamente el nombre "Huerto Terciario".
-
-SELECT 
-    id_parcela,
-    id_usuario,
-    nombre,
-    tipo_cultivo
-FROM public."Parcelas"
-WHERE id_parcela IN (3, 7)
-  AND nombre = 'Huerto Terciario'
-ORDER BY id_parcela ASC;
+UPDATE public."Usuarios"
+SET correo = LOWER(correo);
 
 
--- ============================================================
--- 7.3 INCONSISTENCIA 3: FORMATO NO UNIFORME
---     DE LOS CORREOS ELECTRÓNICOS
--- ============================================================
+-- 3.3.3 Comprobación de la corrección
 
--- Consulta utilizada para revisar los correos registrados
--- después de aplicar la corrección mediante LOWER().
-
-SELECT 
-    id_usuario,
-    nombre,
-    correo
+SELECT id_usuario, nombre, correo
 FROM public."Usuarios"
-ORDER BY id_usuario ASC;
-
-
--- ============================================================
--- 7.3.1 COMPROBACIÓN DEL FORMATO DE LOS CORREOS
--- ============================================================
-
--- Comprobación de que los correos electrónicos estén
--- registrados completamente en minúsculas.
-
-SELECT 
-    id_usuario,
-    nombre,
-    correo
-FROM public."Usuarios"
-WHERE correo = LOWER(correo)
 ORDER BY id_usuario ASC;
