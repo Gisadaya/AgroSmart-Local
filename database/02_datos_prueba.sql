@@ -15,34 +15,3 @@ VALUES
 
 
 
-
-
-
-
--- ============================================================
--- CORRECCIONES REALIZADAS EN LA SEMANA 3
--- ============================================================
-
--- Corrección de nombres de parcelas repetidos
-UPDATE public."Parcelas"
-SET nombre = 'Huerto Principal'
-WHERE id_parcela = 5;
-
-UPDATE public."Parcelas"
-SET nombre = 'Huerto Terciario'
-WHERE id_parcela = 7;
-
-UPDATE public."Parcelas"
-SET nombre = 'Huerto Principal'
-WHERE id_parcela = 6;
-
-
--- Corrección de escritura en el nombre de la parcela
-UPDATE public."Parcelas"
-SET nombre = 'Huerto Terciario'
-WHERE id_parcela = 3;
-
-
--- Normalización de los correos de los usuarios
-UPDATE public."Usuarios"
-SET correo = LOWER(correo);
