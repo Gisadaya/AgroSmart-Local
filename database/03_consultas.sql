@@ -1,5 +1,10 @@
--- ADMINISTRACIÓN Y MANIPULACIÓN DE DATOS DE MI PROYECTO MÓVIL
+
 -- RESPONSABILIDAD: USUARIOS Y PARCELAS
+
+-- ============================================================
+-- SEMANA 2: ADMINISTRACIÓN Y MANIPULACIÓN DE DATOS DE MI PROYECTO MÓVIL
+-- ============================================================
+
 
 -- __________________________________________
 -- 1. TRES CONSULTAS BÁSICAS UTILIZANDO "SELECT"
@@ -106,7 +111,7 @@ ORDER BY cantidad_parcelas DESC;
 
 
 -- ============================================================
--- SEMANA 3: CONSULTAS, RESUMEN Y VALIDACIÓN DE DATOS
+-- SEMANA 3: CONSULTAS, VALIDACIÓN Y CONSOLIDACIÓN DE LA BASE DE DATOS
 -- ============================================================
 
 
