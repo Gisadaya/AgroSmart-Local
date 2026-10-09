@@ -5,8 +5,7 @@
 <h1 align="center">AgroSmart Local</h1>
 
 <p align="center">
-  Base de datos del proyecto AgroSmart Local
-</p>
+  Sistema inteligente de monitoreo agricola 
 
 ---
 ## Contenido
@@ -20,7 +19,8 @@
 7. [Funcionalidades principales](#7-funcionalidades-principales)
 8. [Estado actual del proyecto](#8-estado-actual-del-proyecto)
 9. [Información básica de la base de datos](#9-información-básica-de-la-base-de-datos)
-10. [Trabajo colaborativo](#12-trabajo-colaborativo)
+10. [Evidencias](#10-evidencias)
+11. [Trabajo colaborativo](#11-trabajo-colaborativo)
 
 ## 1. Nombre del proyecto
 
@@ -66,6 +66,7 @@ La base de datos PostgreSQL almacena de forma ordenada y relacionada a los usuar
 | PostgreSQL 18 | Gestión y almacenamiento de la base de datos |
 | pgAdmin 4 | Administración de la base de datos y ejecución de consultas |
 | Git y GitHub | Control de versiones y trabajo colaborativo |
+
 ---
 
 ## 7. Funcionalidades principales
@@ -124,7 +125,7 @@ Primera entrega: **avance técnico** (octubre de 2026).
 
 Al eliminar una parcela se eliminan también sus sensores, lecturas, riegos y alertas (eliminación en cascada). El correo de cada usuario es único, sin distinguir mayúsculas.
 
-## Modelo físico
+### Modelo físico
 
 El modelo físico representa la estructura de la base de datos, sus campos, claves y relaciones entre las diferentes tablas.
 
@@ -143,7 +144,19 @@ El modelo físico representa la estructura de la base de datos, sus campos, clav
    3. `03_consultas.sql`: consultas `SELECT`, `INSERT`, `UPDATE` y `DELETE` de ejemplo.
 
 
-## 10. Trabajo colaborativo
+## 10. Evidencias
+
+El detalle del avance y las capturas que lo respaldan están en el repositorio.
+
+| Evidencia | Ubicación |
+|---|---|
+| Documento de avance técnico | [`documentacion/`](documentacion) |
+| Capturas de la aplicación, la base de datos, las pruebas y GitHub | [`evidencias/`](evidencias) |
+| Scripts SQL (tablas, datos de prueba y consultas) | [`base_de_datos/`](base_de_datos) |
+| Modelo físico de la base de datos | [`modelo/`](modelo) |
+| Proyecto de la aplicación (`.aia`) | [`app/`](app) |
+
+## 11. Trabajo colaborativo
 
 El proyecto se desarrolla en GitHub con ramas independientes para repartir las tareas.
 
