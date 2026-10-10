@@ -1,4 +1,7 @@
--- Datos de prueba para la tabla Parcelas
+
+-- ============================================================
+-- INSERCCIÓN DE DATOS EN LA SEMANA 2
+-- ============================================================
 
 INSERT INTO public."Parcelas"
     (id_parcela, id_usuario, nombre, tipo_cultivo)
@@ -8,3 +11,7 @@ VALUES
     (6, 3, 'Huerto Terceario', 'Pepino'),
     (7, 1, 'Huerto Principal', 'Zanahoria'),
     (8, 2, 'Huerto Secundario', 'Frijol');
+
+
+
+
