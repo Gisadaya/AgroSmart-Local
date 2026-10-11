@@ -152,7 +152,7 @@ El detalle del avance y las capturas que lo respaldan están en el repositorio.
 |---|---|
 | Documento de avance técnico | [`documentacion/`](documentacion) |
 | Capturas de la aplicación, la base de datos, las pruebas y GitHub | [`evidencias/`](evidencias) |
-| Scripts SQL (tablas, datos de prueba y consultas) | [`base_de_datos/`](base_de_datos) |
+| Scripts SQL (tablas, datos de prueba y consultas) | [`base_de_datos/`](base-datos) |
 | Modelo físico de la base de datos | [`modelo/`](modelo) |
 | Proyecto de la aplicación (`.aia`) | [`app/`](app) |
 
