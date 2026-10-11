@@ -130,7 +130,7 @@ Al eliminar una parcela se eliminan también sus sensores, lecturas, riegos y al
 El modelo físico representa la estructura de la base de datos, sus campos, claves y relaciones entre las diferentes tablas.
 
 <p align="center">
-  <img src="modelo/modelo_fisico.png" alt="Modelo físico de la base de datos" width="90%">
+  <img src="base-datos/modelo/modelo_fisico.png" alt="Modelo físico de la base de datos" width="90%">
 </p>
 
 
